@@ -13,11 +13,7 @@ class BasePage(metaclass=MetaLocator):
         self.wait = WebDriverWait(driver=self.driver, timeout=10, poll_frequency=1)
 
     def open(self):
-        self.driver.get(self.PAGE_URL)
+        self.driver.get(self._PAGE_URL)
 
     def is_opened(self):
-        self.wait.until(EC.url_to_be(self.PAGE_URL))
-
-    def open_contacts_tab(self):
-        contacts_button = self.wait.until(EC.element_to_be_clickable(self._CONTACTS_BUTTON))
-        contacts_button.click()
+        self.wait.until(EC.url_to_be(self._PAGE_URL))
