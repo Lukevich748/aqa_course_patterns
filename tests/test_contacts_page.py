@@ -1,4 +1,4 @@
-from lesson_1_POM.base.base_test import BaseTest
+from base.base_test import BaseTest
 
 
 class TestContactsPage(BaseTest):

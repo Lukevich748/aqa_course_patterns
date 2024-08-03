@@ -1,7 +1,7 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
-from lesson_1_POM.metaclasses.meta_locator import MetaLocator
+from metaclasses.meta_locator import MetaLocator
 
 
 class BasePage(metaclass=MetaLocator):
