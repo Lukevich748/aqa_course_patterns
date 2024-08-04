@@ -6,7 +6,8 @@ from metaclasses.meta_locator import MetaLocator
 
 class BasePage(metaclass=MetaLocator):
 
-    _CONTACTS_BUTTON = "//div[@class='MuiBox-root css-1t6c9ts']//a[text()='Contacts']"
+    _CONTACTS_BUTTON = "//div[@aria-label='Navigation Tabs']//a[text()='Contacts']"
+    _COMPANIES_BUTTON = "//div[@aria-label='Navigation Tabs']//a[text()='Companies']"
 
     def __init__(self, driver):
         self.driver: WebDriver = driver

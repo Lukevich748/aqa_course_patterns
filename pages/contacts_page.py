@@ -1,5 +1,3 @@
-import time
-
 from base.base_page import BasePage
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -19,6 +17,7 @@ class ContactsPage(BasePage):
 
     def create_new_contact(self, first_name, last_name, title, email):
         self.wait.until(EC.element_to_be_clickable(self._NEW_CONTACT_BUTTON)).click()
+        assert self.driver.current_url == "https://release-crm.qa-playground.com/#/contacts/create"
 
         first_name_field = self.driver.find_element(*self._FIRST_NAME_FIELD)
         first_name_field.send_keys(first_name)
