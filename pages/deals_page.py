@@ -41,4 +41,7 @@ class DealsPage(BasePage):
         amount_field.send_keys(CMD_CTRL + "A")
         amount_field.send_keys(Keys.BACKSPACE)
         amount_field.send_keys(amount)
-        assert amount == amount_field.get_attribute("value"), "Amount field value does not match the expected input."
+        assert amount == int(amount_field.get_attribute("value")), "Amount field value does not match the expected input."
+
+        self.wait.until(EC.element_to_be_clickable(self._SAVE_BUTTON)).click()
+        self.wait.until(EC.invisibility_of_element_located(self._DEAL_NAME_FIELD))
