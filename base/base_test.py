@@ -1,13 +1,11 @@
-from base.base_page import BasePage
-from pages.contacts_page import ContactsPage
-from pages.companies_page import CompaniesPage
-from pages.deals_page import DealsPage
+from pages.login_page import LoginPage
+from data.credentials import Credentials
+from pages.my_info_page import MyInfoPage
 
 
 class BaseTest:
 
     def setup_method(self):
-        self.base_page = BasePage(self.driver)
-        self.contacts_page = ContactsPage(self.driver)
-        self.companies_page = CompaniesPage(self.driver)
-        self.deals_page = DealsPage(self.driver)
+        self.credentials = Credentials()
+        self.login_page = LoginPage(self.driver)
+        self.my_info_page = MyInfoPage(self.driver)
