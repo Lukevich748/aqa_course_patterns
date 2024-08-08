@@ -20,5 +20,5 @@ class BasePage(metaclass=MetaLocator):
 
     def cmd_ctr_button(self):
         os_name = platform.system()
-        cmd_ctrl_button = Keys.COMMAND if os_name == "darwin" else Keys.CONTROL
+        cmd_ctrl_button = Keys.COMMAND if os_name == "Darwin" else Keys.CONTROL
         return cmd_ctrl_button
