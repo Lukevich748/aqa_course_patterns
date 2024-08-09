@@ -22,7 +22,7 @@ class MyInfoPage(BasePage):
         first_name_field.send_keys(self.cmd_ctr_button() + "A")
         first_name_field.send_keys(Keys.BACKSPACE)
         first_name_field.send_keys(first_name)
-        assert first_name == first_name_field.get_attribute("value"), f"The firstname field does not contain '{first_name}'"
+        assert first_name == first_name_field.get_attribute("value"), f"The first name field does not contain '{first_name}'"
 
     @allure.step("Enter middle name")
     def enter_middle_name(self, middle_name):

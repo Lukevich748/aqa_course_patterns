@@ -1,3 +1,4 @@
+from pages.admin_page import AdminPage
 from pages.dashboard_page import DashboardPage
 from pages.login_page import LoginPage
 from data.credentials import Credentials
@@ -8,6 +9,7 @@ class BaseTest:
 
     def setup_method(self):
         self.credentials = Credentials()
+        self.admin_page = AdminPage(self.driver)
         self.login_page = LoginPage(self.driver)
         self.dashboard_page = DashboardPage(self.driver)
         self.my_info_page = MyInfoPage(self.driver)
