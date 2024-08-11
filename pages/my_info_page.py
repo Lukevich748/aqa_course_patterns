@@ -45,3 +45,4 @@ class MyInfoPage(BasePage):
         save_button = self.wait.until(EC.element_to_be_clickable(self._SAVE_BUTTON))
         save_button.click()
         assert self.wait.until(EC.visibility_of_element_located(self._SUCCESS_ALERT)), "Success alert is not visible"
+        assert self.wait.until(EC.invisibility_of_element_located(self._SUCCESS_ALERT)), "Success alert is visible"
