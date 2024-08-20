@@ -12,7 +12,7 @@ fake = Faker()
 @allure.story("Add Nationality")
 class TestAdminPage(BaseTest):
 
-    @pytest.mark.national
+    @pytest.mark.smoke
     @allure.severity(Severity.NORMAL)
     @allure.title("Add a New Nationality")
     def test_add_nationality(self):
