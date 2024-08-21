@@ -15,11 +15,11 @@ class PersonalDetails(BasePage):
 
     @allure.step("Enter first name")
     def enter_first_name(self, first_name):
-        first_name_field = self.wait.until(EC.element_to_be_clickable(self._FIRST_NAME_FIELD))
-        first_name_field.send_keys(self.cmd_ctr_button() + "A")
-        first_name_field.send_keys(Keys.BACKSPACE)
-        first_name_field.send_keys(first_name)
-        assert first_name == first_name_field.get_attribute("value"), f"The first name field does not contain '{first_name}'"
+        self.wait_for_clickable(self._FIRST_NAME_FIELD)
+        self.fill(self._FIRST_NAME_FIELD, self.cmd_ctr_button + "A")
+        self.fill(self._FIRST_NAME_FIELD, Keys.BACKSPACE)
+        self.fill(self._FIRST_NAME_FIELD, first_name)
+        assert first_name == self.find(self._FIRST_NAME_FIELD).get_attribute("value"), f"The first name field does not contain '{first_name}'"
 
     @allure.step("Enter middle name")
     def enter_middle_name(self, middle_name):
