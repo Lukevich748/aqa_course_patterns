@@ -1,13 +1,10 @@
 import allure
-from base.base_page import BasePage
-from data.links import Links
 from selenium.webdriver import Keys
 from selenium.webdriver.support import expected_conditions as EC
+from base.base_page import BasePage
 
 
-class MyInfoPage(BasePage):
-
-    _PAGE_URL = Links.MY_INFO_PAGE
+class PersonalDetails(BasePage):
 
     _FIRST_NAME_FIELD = "//input[@name='firstName']"
     _MIDDLE_NAME_FIELD = "//input[@name='middleName']"
