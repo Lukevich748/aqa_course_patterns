@@ -1,3 +1,5 @@
+import time
+
 import allure
 import pytest
 from allure_commons.types import Severity
@@ -17,10 +19,9 @@ class TestMyInfoPage(BaseTest):
     @allure.title("Edit Employee Full Name on 'My Info Page'")
     def test_edit_employee_full_name(self):
         self.dashboard_page.is_opened()
-        self.dashboard_page.click_my_info_button()
+        self.dashboard_page.open_my_info_tab()
         self.my_info_page.is_opened()
-        self.my_info_page.menu.open_personal_details()
-        self.my_info_page.enter_first_name(fake.first_name())
-        self.my_info_page.enter_middle_name(fake.name())
-        self.my_info_page.enter_last_name(fake.last_name())
-        self.my_info_page.click_save_button()
+        self.my_info_page.personal_details.enter_first_name(fake.first_name())
+        self.my_info_page.personal_details.enter_middle_name(fake.name())
+        self.my_info_page.personal_details.enter_last_name(fake.last_name())
+        self.my_info_page.personal_details.click_save_button()

@@ -24,7 +24,7 @@ class PersonalDetails(BasePage):
     @allure.step("Enter middle name")
     def enter_middle_name(self, middle_name):
         middle_name_field = self.wait.until(EC.element_to_be_clickable(self._MIDDLE_NAME_FIELD))
-        middle_name_field.send_keys(self.cmd_ctr_button() + "A")
+        middle_name_field.send_keys(self.cmd_ctr_button + "A")
         middle_name_field.send_keys(Keys.BACKSPACE)
         middle_name_field.send_keys(middle_name)
         assert middle_name == middle_name_field.get_attribute("value"), f"The middle name field does not contain '{middle_name}'"
@@ -32,7 +32,7 @@ class PersonalDetails(BasePage):
     @allure.step("Enter last name")
     def enter_last_name(self, last_name):
         last_name_field = self.wait.until(EC.element_to_be_clickable(self._LAST_NAME_FIELD))
-        last_name_field.send_keys(self.cmd_ctr_button() + "A")
+        last_name_field.send_keys(self.cmd_ctr_button + "A")
         last_name_field.send_keys(Keys.BACKSPACE)
         last_name_field.send_keys(last_name)
         assert last_name == last_name_field.get_attribute("value"), f"The last name field does not contain '{last_name}'"

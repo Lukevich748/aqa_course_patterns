@@ -38,7 +38,7 @@ class AdminPage(BasePage):
     @allure.step("Enter nationality name")
     def enter_nationality_name(self, nationality_name):
         nationality_name_field = self.wait.until(EC.element_to_be_clickable(self._NATIONALITY_NAME_FIELD))
-        nationality_name_field.send_keys(self.cmd_ctr_button() + "A")
+        nationality_name_field.send_keys(self.cmd_ctr_button + "A")
         nationality_name_field.send_keys(Keys.BACKSPACE)
         nationality_name_field.send_keys(nationality_name)
         assert nationality_name == nationality_name_field.get_attribute("value"), f"The nationality name field does not contain '{nationality_name}'"

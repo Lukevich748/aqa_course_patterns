@@ -17,7 +17,7 @@ class TestAdminPage(BaseTest):
     @allure.title("Add a New Nationality")
     def test_add_nationality(self):
         self.dashboard_page.is_opened()
-        self.dashboard_page.click_admin_button()
+        self.dashboard_page.open_admin_tab()
         self.admin_page.is_opened()
         self.admin_page.click_nationalities_tab_button()
         self.admin_page.click_add_nationality_button()
