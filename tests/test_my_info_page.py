@@ -12,7 +12,7 @@ fake = Faker()
 @allure.story("Edit Employee Full Name")
 class TestMyInfoPage(BaseTest):
 
-    @pytest.mark.smoker
+    @pytest.mark.smoke
     @allure.severity(Severity.CRITICAL)
     @allure.title("Edit Employee Full Name on 'My Info Page'")
     def test_edit_employee_full_name(self):

@@ -1,4 +1,4 @@
-from pages.admin_page import AdminPage
+from pages.admin_page.admin_page import AdminPage
 from pages.dashboard_page import DashboardPage
 from pages.login_page import LoginPage
 from data.credentials import Credentials

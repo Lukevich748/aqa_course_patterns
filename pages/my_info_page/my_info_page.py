@@ -10,8 +10,7 @@ class MyInfoPage(BasePage):
 
     @property
     def menu(self):
-        self._menu = MyInfoMenu(self.driver)
-        return self._menu
+        return MyInfoMenu(self.driver)
 
     @property
     def personal_details(self):

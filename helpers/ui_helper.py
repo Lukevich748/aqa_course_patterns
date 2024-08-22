@@ -34,16 +34,23 @@ class UIHelper:
     def fill(self, locator: tuple, text: str):
         self.find(locator).send_keys(text)
 
-    def click(self, locator: tuple) -> WebElement:
-        element = self.wait_for_clickable(locator)
-        return element
+    def click(self, locator: tuple):
+        self.wait_element_to_be_clickable(locator).click()
 
     # Waits
     def wait_visibility_of_element(self, locator: tuple, message=None) -> WebElement:
         element = self.wait.until(EC.visibility_of_element_located(locator), message=message)
         return element
 
-    def wait_for_clickable(self, locator: tuple, message=None) -> WebElement:
+    def wait_visibility_of_elements(self, locator: tuple, message=None) -> list[WebElement]:
+        elements = self.wait.until(EC.visibility_of_all_elements_located(locator), message=message)
+        return elements
+
+    def wait_invisibility_of_element(self, locator: tuple, message=None) -> WebElement:
+        element = self.wait.until(EC.invisibility_of_element_located(locator), message=message)
+        return element
+
+    def wait_element_to_be_clickable(self, locator: tuple, message=None) -> WebElement:
         element = self.wait.until(EC.element_to_be_clickable(locator), message=message)
         return element
 
