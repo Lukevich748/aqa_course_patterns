@@ -1,7 +1,6 @@
 import allure
 from base.base_page import BasePage
 from data.links import Links
-from helpers.ui_helper import UIHelper
 from pages.my_info_page.components.personal_details import PersonalDetails
 
 
