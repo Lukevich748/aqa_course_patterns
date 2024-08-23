@@ -1,6 +1,7 @@
+import allure
 from base.base_page import BasePage
 from data.links import Links
-from pages.my_info_page.components.my_info_menu import MyInfoMenu
+from helpers.ui_helper import UIHelper
 from pages.my_info_page.components.personal_details import PersonalDetails
 
 
@@ -8,10 +9,10 @@ class MyInfoPage(BasePage):
 
     _PAGE_URL = Links.MY_INFO_PAGE
 
-    @property
-    def menu(self):
-        return MyInfoMenu(self.driver)
+    def __init__(self, driver):
+        super().__init__(driver)
+        self.personal_details = PersonalDetails(self.driver)
 
-    @property
-    def personal_details(self):
-        return PersonalDetails(self.driver)
+    @allure.step("Open 'Personal Details' Tab")
+    def open_personal_details(self):
+        self.click(self._PERSONAL_DETAILS_TAB)
