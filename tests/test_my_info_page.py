@@ -16,6 +16,9 @@ class TestMyInfoPage(BaseTest):
     @allure.severity(Severity.CRITICAL)
     @allure.title("Edit Employee Full Name on 'My Info Page'")
     def test_edit_employee_full_name(self):
+        self.login_page.open()
+        self.login_page.is_opened()
+        self.login_page.successful_login()
         self.dashboard_page.is_opened()
         self.dashboard_page.open_my_info_tab()
         self.my_info_page.is_opened()
