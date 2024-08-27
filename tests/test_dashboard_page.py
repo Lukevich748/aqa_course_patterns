@@ -16,5 +16,8 @@ class TestDashboardPage(BaseTest):
     @allure.severity(Severity.NORMAL)
     @allure.title("Check the Number of Widgets on the Dashboard")
     def test_check_widgets_number(self):
+        self.login_page.open()
+        self.login_page.is_opened()
+        self.login_page.successful_login()
         self.dashboard_page.is_opened()
         self.dashboard_page.check_widgets_number()

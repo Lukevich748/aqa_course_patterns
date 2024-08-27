@@ -27,7 +27,7 @@ class LoginPage(BasePage):
         else:
             self.enter_user_name(Credentials.LOGIN)
             self.enter_password(Credentials.PASSWORD)
-            self.enter_password()
+            self.click_login_button()
 
             with open("cookies.pkl", "wb") as cookies_file:
                 pickle.dump(self.driver.get_cookies(), cookies_file)

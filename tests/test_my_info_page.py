@@ -8,13 +8,12 @@ fake = Faker()
 
 
 @allure.epic("Employee Personal Data Management")
-@allure.feature("Editing Employee Personal Details")
-@allure.story("Edit Employee Full Name")
 class TestMyInfoPage(BaseTest):
 
     @pytest.mark.smoke
     @allure.severity(Severity.CRITICAL)
-    @allure.title("Edit Employee Full Name on 'My Info Page'")
+    @allure.feature("Editing Employee Personal Details")
+    @allure.story("Edit Employee Full Name")
     def test_edit_employee_full_name(self):
         self.login_page.open()
         self.login_page.is_opened()

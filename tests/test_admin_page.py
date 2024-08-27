@@ -16,6 +16,9 @@ class TestAdminPage(BaseTest):
     @allure.story("Add Nationality")
     @allure.title("Add a New Nationality")
     def test_add_nationality(self):
+        self.login_page.open()
+        self.login_page.is_opened()
+        self.login_page.successful_login()
         self.dashboard_page.is_opened()
         self.dashboard_page.open_admin_tab()
         self.admin_page.is_opened()
@@ -30,6 +33,9 @@ class TestAdminPage(BaseTest):
     @allure.story("Search User")
     @allure.title("Search User by User Name")
     def test_search_user_name(self):
+        self.login_page.open()
+        self.login_page.is_opened()
+        self.login_page.successful_login()
         self.dashboard_page.is_opened()
         self.dashboard_page.open_admin_tab()
         self.admin_page.is_opened()
